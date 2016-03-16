@@ -61,8 +61,8 @@ class Blog(models.Model):
 
 	def get_summary(self):
 		if len(self.content) > 256:
-			return "%s ....."%(self.content[:256])
-		return self.content
+			return markdown.markdown("%s ....."%(self.content[:256]),safe_mode='escape')
+		return markdown.markdown(self.content,safe_mode='escape')
 
 
 class Tag(models.Model):
