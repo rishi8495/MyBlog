@@ -1,0 +1,33 @@
+{% load humanize %}
+<article>
+  <h1>
+    <a href="{% url 'blog' post.slug %}">{{ post.title }}</a>
+  </h1>
+  <div class="info">
+    <span class="date">
+      <span class="glyphicon glyphicon-calendar"></span>
+      {{ post.create_date|naturaltime }} 
+
+    </span>
+    <span class="user">
+      <i class="fa fa-user"></i>
+      {{ post.blogger.username }}
+
+    </span>
+  </div>
+  <div class="content">
+    {{ post.get_summary|safe }}
+    <b><a href="{% url 'blog' post.slug %}">see more...</a></b>
+  </div>
+  {% if post.get_tags %}
+    <div class="tags">
+      {% for tag in post.get_tags %}
+        <a href="">
+          <span class="label label-default">{{ tag }}</span>
+        </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <hr>
+
+</article>    

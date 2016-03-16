@@ -37,6 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
+    # 3rd party packages 
+    'crispy_forms',
+
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,3 +124,5 @@ ALLOWED_SIGNUP_DOMAINS = ['*']
 
 FILE_UPLOAD_TEMP_DIR = '/tmp/'
 FILE_UPLOAD_PERMISSIONS = 0644
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% load i18n %}
+
+{% block head %}
+	<script src="{% static 'js/posts.js' %}"></script>
+{% endblock head%}
+
+{% block content %}
+<div class="col-sm-10 col-sm-offset-1 ">
+<ol class="breadcrumb">
+	<li><a href="{% url 'blogs' %}">{% trans 'blog' %}</a></li>
+	<li class="active">{% trans 'write blog' %}</li>
+</ol>
+<form action="{% url 'new' %}" method="POST">
+	{% csrf_token %}  
+	{{ form|crispy }} 
+	
+	<div class='form-group'>
+		<button type="button" class="btn btn-primary btn-sm publish">{% trans 'Publish' %}</button>
+		<button type="button" class="btn btn-primary btn-sm draft">{% trans 'Save Draft' %}</button>
+		
+	</div>
+	
+
+</form>
+</div>
+
+{% endblock content %}

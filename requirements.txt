@@ -1,0 +1,7 @@
+Django==1.8
+django-appconf==1.0.1
+django-crispy-forms==1.6.0
+django-markdown==0.8.4
+Markdown==2.6.5
+six==1.10.0
+wheel==0.29.0

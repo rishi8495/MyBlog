@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block head %}
+  <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+  
+  <div class="cover">
+    <div class="login">
+      <h2>{% trans 'Log in' %}</h2>
+      <form method="post" action="{% url 'login' %}" role="form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">{% trans 'Log in' %}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock body %}
