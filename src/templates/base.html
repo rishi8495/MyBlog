@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>{% block title %}Blog{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -13,6 +12,7 @@
     {% block head %}{% endblock %}
   </head>
   <body id="bootstrap-themes" class="swag-line template-index" >
+    {% include 'facebook_comment.html' %}
     {% block body %}
     {% include 'navbar.html' %}
     {% block content %}
