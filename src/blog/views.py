@@ -60,6 +60,9 @@ class CreateBlogView(View):
 			tags = form.cleaned_data.get('tags')
 			blog.create_tags(tags)
 			return redirect('/')
+		return render(request,'blog/new.html',{
+			'form':form
+			})
 
 class DraftView(View):
 	@method_decorator(login_required)
